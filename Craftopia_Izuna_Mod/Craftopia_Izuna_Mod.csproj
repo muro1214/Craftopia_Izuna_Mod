@@ -1,30 +1,30 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <TargetFramework>netstandard2.0</TargetFramework>
   </PropertyGroup>
 
   <ItemGroup>
     <Reference Include="0Harmony">
-      <HintPath>..\Libs\0Harmony.dll</HintPath>
+      <HintPath>E:\SteamLibrary\steamapps\workshop\content\1307550\2519948110\BepInEx\core\0Harmony.dll</HintPath>
     </Reference>
     <Reference Include="AD__Overcraft">
-      <HintPath>..\Libs\AD__Overcraft_publicized.dll</HintPath>
-    </Reference>
-    <Reference Include="Assembly-CSharp">
-      <HintPath>..\Libs\Assembly-CSharp.dll</HintPath>
+      <HintPath>E:\SteamLibrary\steamapps\common\Craftopia\Craftopia_Data\Managed\AD__Overcraft.dll</HintPath>
     </Reference>
     <Reference Include="BepInEx">
-      <HintPath>..\Libs\BepInEx.dll</HintPath>
+      <HintPath>E:\SteamLibrary\steamapps\workshop\content\1307550\2519948110\BepInEx\core\BepInEx.dll</HintPath>
     </Reference>
-    <Reference Include="UniRx">
-      <HintPath>..\Libs\UniRx.dll</HintPath>
+    <Reference Include="Unity.TextMeshPro">
+      <HintPath>E:\SteamLibrary\steamapps\common\Craftopia\Craftopia_Data\Managed\Unity.TextMeshPro.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine">
-      <HintPath>..\Libs\UnityEngine.dll</HintPath>
+      <HintPath>E:\SteamLibrary\steamapps\common\Craftopia\Craftopia_Data\Managed\UnityEngine.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.CoreModule">
-      <HintPath>..\Libs\UnityEngine.CoreModule.dll</HintPath>
+      <HintPath>E:\SteamLibrary\steamapps\common\Craftopia\Craftopia_Data\Managed\UnityEngine.CoreModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UI">
+      <HintPath>E:\SteamLibrary\steamapps\common\Craftopia\Craftopia_Data\Managed\UnityEngine.UI.dll</HintPath>
     </Reference>
   </ItemGroup>
 
