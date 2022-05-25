@@ -11,6 +11,11 @@ namespace Craftopia_Izuna_Mod
     {
         public static bool Prefix(OcUI_CraftEnchantList __instance, OcUI_CraftEnchantSheet ___selectingSheet, ref int ____lockCount)
         {
+            if (!Patcher.isEnabled_Enchant.Value)
+            {
+                return true;
+            }
+
             if (___selectingSheet == null)
             {
                 return false;
@@ -40,6 +45,11 @@ namespace Craftopia_Izuna_Mod
     {
         public static void Postfix(OcUI_CraftEnchantSheet ___fixedEnchantSheet)
         {
+            if (!Patcher.isEnabled_Enchant.Value)
+            {
+                return;
+            }
+
             ___fixedEnchantSheet.gameObject.SetActive(false);
 
         }
@@ -50,6 +60,11 @@ namespace Craftopia_Izuna_Mod
     {
         public static void Postfix(TextMeshProUGUI ___price)
         {
+            if (!Patcher.isEnabled_Enchant.Value)
+            {
+                return;
+            }
+
             ___price.text = "0";
         }
     }
@@ -59,6 +74,10 @@ namespace Craftopia_Izuna_Mod
     {
         public static bool Prefix(ref int[] __result, int ____lockCount, List<OcUI_CraftEnchantSheet> ___itemEnchantList)
         {
+            if (!Patcher.isEnabled_Enchant.Value)
+            {
+                return true;
+            }
 
             int[] array = new int[4];
             if (____lockCount == 0)
