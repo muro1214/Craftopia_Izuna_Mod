@@ -26,7 +26,7 @@ namespace Craftopia_Izuna_Mod
                 return;
             }
 
-            var currentSize = item.ItemModel.transform.localScale;
+            Vector3 currentSize = item.ItemModel.transform.localScale;
             if (currentSize == Vector3.one)
             {
                 item.ItemModel.transform.localScale = currentSize * 0.5f;
@@ -37,7 +37,7 @@ namespace Craftopia_Izuna_Mod
     }
 
     [HarmonyPatch(typeof(OcPlEquipCtrl), "setEquip")]
-    public class setEquipPatch
+    public class SetEquipPatch
     {
         public static bool Prefix(OcItem item, OcEquipSlot equipSlot)
         {
@@ -57,7 +57,7 @@ namespace Craftopia_Izuna_Mod
                 return true;
             }
 
-            var currentSize = item.ItemModel.transform.localScale;
+            Vector3 currentSize = item.ItemModel.transform.localScale;
             if (currentSize == Vector3.one)
             {
                 item.ItemModel.transform.localScale = currentSize * 0.5f;

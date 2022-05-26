@@ -4,7 +4,7 @@ using Oc;
 namespace Craftopia_Izuna_Mod
 {
     [HarmonyPatch(typeof(OcUtility), "getDropItem_BonusRate")]
-    public class getDropItem_BonusRatePatch
+    public class GetDropItem_BonusRatePatch
     {
         public static void Postfix(ref float __result)
         {

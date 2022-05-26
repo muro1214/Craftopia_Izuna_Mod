@@ -4,7 +4,7 @@ using Oc;
 namespace Craftopia_Izuna_Mod
 {
     [HarmonyPatch(typeof(OcPlMaster), "changeDurability_Item")]
-    public class changeDurability_ItemPatch
+    public class ChangeDurability_ItemPatch
     {
         public static bool Prefix()
         {
