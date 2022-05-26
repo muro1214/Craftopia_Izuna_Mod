@@ -3,6 +3,7 @@ using Oc.Item.UI;
 using System.Collections.Generic;
 using System.Linq;
 using TMPro;
+using UnityEngine.UI;
 
 namespace Craftopia_Izuna_Mod
 {
@@ -58,7 +59,7 @@ namespace Craftopia_Izuna_Mod
     [HarmonyPatch(typeof(OcUI_CraftEnchantList), "Refresh")]
     public class RefreshPatch
     {
-        public static void Postfix(TextMeshProUGUI ___price)
+        public static void Postfix(TextMeshProUGUI ___price, Button ___selectButton, OcUI_CraftEnchantSheet ___selectingSheet, int ____lockCount)
         {
             if (!Patcher.isEnabled_Enchant.Value)
             {
@@ -66,6 +67,7 @@ namespace Craftopia_Izuna_Mod
             }
 
             ___price.text = "0";
+            ___selectButton.SetInteractable(___selectingSheet.Chosen || ____lockCount < 4);
         }
     }
 
