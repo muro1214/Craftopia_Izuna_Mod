@@ -32,6 +32,11 @@ namespace Craftopia_Izuna_Mod
         public static ConfigEntry<long> experienceRate;
         public static ConfigEntry<int> skillPointRate;
 
+        // Configuration : Item
+        public static ConfigEntry<bool> isEnabled_Item;
+        public static ConfigEntry<float> dropBonusRate;
+        public static ConfigEntry<float> potionEffectiveRate;
+
         public void Awake()
         {
             isEnabled_Enchant = Config.Bind<bool>("CraftEnchant", "IsEnabled", true);
@@ -47,6 +52,10 @@ namespace Craftopia_Izuna_Mod
             isEnabled_Player = Config.Bind<bool>("Player", "IsEnabled", true);
             experienceRate = Config.Bind<long>("Player", "ExperienceRate", 2);
             skillPointRate = Config.Bind<int>("Player", "SkillPointRate", 2);
+
+            isEnabled_Item = Config.Bind<bool>("Item", "IsEnabled", true);
+            dropBonusRate = Config.Bind<float>("Item", "DropBonusRate", 7f);
+            potionEffectiveRate = Config.Bind<float>("Item", "PotionEffectiveRate", 100f);
 
             Harmony.CreateAndPatchAll(Assembly.GetExecutingAssembly());
         }

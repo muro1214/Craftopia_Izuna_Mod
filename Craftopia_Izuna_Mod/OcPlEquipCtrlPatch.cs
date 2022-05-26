@@ -39,19 +39,20 @@ namespace Craftopia_Izuna_Mod
     [HarmonyPatch(typeof(OcPlEquipCtrl), "setEquip")]
     public class setEquipPatch
     {
-        public static bool Prefix(OcItem item, OcEquipSlot equipSlot, OcPlEquipCtrl __instance, OcPlEquip[] ____Equip)
+        public static bool Prefix(OcItem item, OcEquipSlot equipSlot)
         {
             if (!Patcher.isEnabled_Equip.Value)
             {
                 return true;
             }
 
-            if (equipSlot != OcEquipSlot.WpMain)
+            if (equipSlot != OcEquipSlot.WpMain && equipSlot != OcEquipSlot.WpSub)
             {
                 return true;
             }
 
-            if (item.EquipPrefab.WpCategory != OcWpCategory.MagicStaff)
+            OcWpCategory category = item.EquipPrefab.WpCategory;
+            if (category != OcWpCategory.MagicStaff && category != OcWpCategory.RecallRod)
             {
                 return true;
             }
